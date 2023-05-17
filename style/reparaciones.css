@@ -1,0 +1,52 @@
+/* Global */
+:root {
+  --color-primario: rgb(37, 36, 36);
+  --color-secundario: rgb(222, 219, 219);
+  --color-terciario: rgb(159, 154, 154);
+  --color-registros: rgb(159, 154, 154, 0.8);
+}
+
+/* Fondo */
+.hero {
+  opacity: 0.3;
+}
+
+/* Registros */
+.registros {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+  margin: 5rem;
+  z-index: 1;
+}
+
+/**Registro  */
+.registro {
+  display: flex;
+  column-gap: 4rem;
+  width: 70%;
+  min-height: 9rem;
+  color: black;
+  background-color: var(--color-registros);
+  padding: 1rem 1.5rem;
+  border: solid var(--color-primario) 2px;
+  border-radius: 19px;
+  cursor: pointer;
+}
+
+.registro img {
+  width: 25%;
+  object-fit: contain;
+  justify-self: center;
+}
+
+.registro h3 {
+  display: inline;
+}
+
+.estado {
+  display: inline;
+  color: brown;
+}

@@ -1,0 +1,137 @@
+/* Global */
+
+:root {
+  --color-primario: rgb(37, 36, 36);
+  --color-secundario: rgb(222, 219, 219);
+  --color-terciario: rgb(159, 154, 154);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-primario);
+  color: var(--color-secundario);
+  font-family: "Raleway", sans-serif;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 0.5rem auto;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  margin: 0.5rem auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-secundario);
+}
+
+/* Fondo */
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--color-primario);
+  background-image: url(../img/fondo.jpeg);
+  opacity: 0.85;
+  background-size: cover;
+  z-index: 0;
+}
+
+/* Barra de navegacion */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-primario);
+  opacity: 0.97;
+  z-index: 2;
+}
+
+.navegacion {
+  height: 2.9rem;
+  margin: 0 3rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-inline-start: 0;
+}
+
+.navegacion a:nth-of-type(n):hover {
+  color: var(--color-terciario);
+  cursor: pointer;
+}
+
+/* Inicio sesion */
+/** Modal */
+.modal-sesion {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 5rem;
+  margin-top: 2.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 22rem;
+  height: 22rem;
+  background-color: rgba(88, 84, 84, 0.42);
+  color: var(--color-primario);
+  border-radius: 7px;
+  z-index: 1;
+}
+
+/**Formulario */
+.formulario-sesion {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-sesion input {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  width: 12.8rem;
+  height: 1.9rem;
+  background-color: transparent;
+  border: solid rgba(46, 41, 41, 1) 0.15rem;
+  border-radius: 5px;
+}
+
+.formulario-sesion input:focus {
+  outline-width: 0;
+}
+
+.formulario-sesion input::placeholder {
+  color: rgb(56, 54, 54);
+}
+
+/**Registrarse */
+.modal-sesion h2:nth-of-type(2) {
+  border-bottom: solid var(--color-primario) 2px;
+}
+.modal-sesion h2:nth-of-type(2):hover {
+  cursor: pointer;
+  border-bottom: solid var(--color-terciario) 4px;
+}
