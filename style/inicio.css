@@ -1,14 +1,21 @@
-/* Global */
+/* Global ---------------------*/
 
 :root {
   --color-primario: rgb(37, 36, 36);
   --color-secundario: rgb(222, 219, 219);
   --color-terciario: rgb(159, 154, 154);
+  --color-registros: rgb(159, 154, 154, 0.8);
 }
 
 html {
+  font-size: 15px;
   box-sizing: border-box;
-  font-size: 20px;
+}
+
+@media only screen and (min-width: 1025px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 *,
@@ -51,14 +58,14 @@ a {
   left: 0;
   background-color: var(--color-primario);
   background-image: url(../img/fondo.jpeg);
-  opacity: 0.85;
+  opacity: 0.79;
   background-size: cover;
   z-index: 0;
 }
 
-/* Barra de navegacion */
+/* Barra de navegacion  ------------------------------*/
 header {
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
@@ -79,31 +86,48 @@ header {
 
 .navegacion a:nth-of-type(n):hover {
   color: var(--color-terciario);
+  border-bottom: solid var(--color-terciario) 1px;
   cursor: pointer;
 }
 
-/* Inicio sesion */
-/** Modal */
+.navegacion a:nth-of-type(n):active {
+  color: var(--color-terciario);
+  border-bottom: solid var(--color-terciario) 1px;
+  cursor: pointer;
+}
+
+/* Inicio sesion -------------------------------------*/
+/** Modal ------------*/
 .modal-sesion {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 50vh;
   transform: translateY(-50%);
-  margin-left: 5rem;
-  margin-top: 2.9rem;
+  width: min(100%, 22rem);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  width: 22rem;
   height: 22rem;
-  background-color: rgba(88, 84, 84, 0.42);
+  background-color: rgba(159, 154, 154, 0.5);
   color: var(--color-primario);
   border-radius: 7px;
   z-index: 1;
 }
 
-/**Formulario */
+@media only screen and (min-width: 1025px) {
+  .modal-sesion {
+    margin-left: 5vw;
+    width: 22rem;
+  }
+}
+
+.modal-sesion h2 {
+  font-size: 1.8rem;
+}
+
+/**Formulario ---------*/
 .formulario-sesion {
   display: flex;
   flex-direction: column;
@@ -119,6 +143,15 @@ header {
   border-radius: 5px;
 }
 
+.formulario-sesion input:nth-of-type(3) {
+  cursor: pointer;
+}
+
+.formulario-sesion input:nth-of-type(3):hover {
+  color: var(--color-secundario);
+  background-color: var(--color-primario);
+}
+
 .formulario-sesion input:focus {
   outline-width: 0;
 }
@@ -128,10 +161,118 @@ header {
 }
 
 /**Registrarse */
+
 .modal-sesion h2:nth-of-type(2) {
   border-bottom: solid var(--color-primario) 2px;
 }
 .modal-sesion h2:nth-of-type(2):hover {
   cursor: pointer;
   border-bottom: solid var(--color-terciario) 4px;
+}
+
+/*------------------------------Repaciones----------------------------------------- */
+/* Fondo */
+.hero-opaco {
+  opacity: 0.3;
+}
+
+/* Registros */
+.registros {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+  margin: 3rem;
+  z-index: 1;
+}
+
+/**Registro  */
+.registro {
+  display: flex;
+  column-gap: 2rem;
+  width: 90%;
+  min-height: 9rem;
+  color: black;
+  background-color: var(--color-registros);
+  padding: 1rem 1.5rem;
+  border: solid var(--color-primario) 2px;
+  border-radius: 19px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1025px) {
+  .registro {
+    width: 70%;
+  }
+}
+
+.registro img {
+  display: none;
+  width: 25%;
+  object-fit: contain;
+  justify-self: center;
+}
+
+@media only screen and (min-width: 1025px) {
+  .registro img {
+    display: inline;
+  }
+}
+
+.registro h3 {
+  display: inline;
+}
+
+.estado {
+  display: inline;
+  color: brown;
+}
+
+/*------------------------------Sobre nosotros----------------------------------------- */
+.h2-grande {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.about {
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: justify;
+  padding: 0 20vw;
+}
+
+.about section:nth-child(1) {
+  margin-bottom: 5rem;
+}
+
+/*------------------------------Contactos----------------------------------------- */
+
+.contact {
+  position: relative;
+  top: 50vh;
+  transform: translateY(-50%);
+  margin: 0 20vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.contact section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact img {
+  width: 2rem;
+}
+
+.contact p {
+  margin: 0;
 }
